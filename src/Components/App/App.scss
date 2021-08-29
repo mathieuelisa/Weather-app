@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Azonix";
+  src: local("Azonix"), url(../../Font/Azonix.otf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#325767, #8e97a0);
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Azonix";
+}
