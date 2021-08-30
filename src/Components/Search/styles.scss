@@ -1,0 +1,18 @@
+.searchBar__container {
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0.5;
+  margin-right: 10px;
+
+  &--title {
+    font-family: "Resotho";
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+  }
+}

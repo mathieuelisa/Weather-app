@@ -1,0 +1,11 @@
+.optionWeather__container {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+
+  &--wind-title,
+  &--humidity-title,
+  &--pollen-title {
+    padding: 10px;
+  }
+}

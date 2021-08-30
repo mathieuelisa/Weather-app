@@ -1,7 +1,12 @@
+import "./styles.scss";
+
 function Search() {
   return (
-    <div>
-      <h2>Searchbar</h2>
+    <div className="searchBar__container">
+      <input
+        className="searchBar__container--title"
+        placeholder="Select Country"
+      />
     </div>
   );
 }

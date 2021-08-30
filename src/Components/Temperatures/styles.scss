@@ -1,0 +1,20 @@
+.temperature__container {
+  height: 450px;
+
+  &--img {
+    height: 315px;
+  }
+
+  &--degree {
+    position: relative;
+    top: -60px;
+    font-size: 61px;
+  }
+}
+
+.temperature__secondContainer {
+  position: relative;
+  top: -39px;
+  display: flex;
+  justify-content: space-evenly;
+}

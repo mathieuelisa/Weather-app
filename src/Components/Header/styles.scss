@@ -1,0 +1,14 @@
+.header__container {
+  height: 50px;
+
+  &--country {
+    font-size: 30px;
+  }
+
+  &--date {
+    font-family: "Resotho";
+    font-size: 17px;
+    color: darkgrey;
+    padding: 10px;
+  }
+}
