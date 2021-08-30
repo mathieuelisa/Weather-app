@@ -1,7 +1,10 @@
 .optionWeather__container {
-  height: 100px;
   display: flex;
   justify-content: space-around;
+  position: relative;
+  bottom: 12px;
+  font-size: 0.7em;
+  color: lightgray;
 
   &--wind-title,
   &--humidity-title,

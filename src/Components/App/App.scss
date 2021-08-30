@@ -9,13 +9,18 @@
   box-sizing: border-box;
 }
 
-body {
-  background: linear-gradient(#325767, #8e97a0);
-  height: 100vh;
-}
-
 .App {
+  height: 100vh;
   text-align: center;
   color: whitesmoke;
   font-family: "Azonix";
+  background: linear-gradient(#325767, #8e97a0);
+
+  // Another mode
+  &--isActive {
+    background: linear-gradient(#e1751a, #e6c027);
+    text-align: center;
+    color: whitesmoke;
+    font-family: "Azonix";
+  }
 }
