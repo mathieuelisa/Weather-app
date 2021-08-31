@@ -1,7 +1,7 @@
 import "./styles.scss";
 
-function Header({}) {
-  function dateFunction(d) {
+function Header({ dataApi }) {
+  function getDate(d) {
     let months = [
       "Janvier",
       "Fevrier",
@@ -36,8 +36,10 @@ function Header({}) {
 
   return (
     <div className="header__container">
-      <h1 className="header__container--country">Paris, FR</h1>
-      <h2 className="header__container--date">{dateFunction(new Date())}</h2>
+      <h1 className="header__container--country">
+        {dataApi?.name}, {dataApi?.sys.country}
+      </h1>
+      <h2 className="header__container--date">{getDate(new Date())}</h2>
     </div>
   );
 }

@@ -15,7 +15,7 @@ function App() {
   // Get element of the API
   const [dataApi, setDataApi] = useState();
   // Configure the country
-  const [valueInput, setValueInput] = useState("London");
+  const [valueInput, setValueInput] = useState("Tokyo");
 
   useEffect(() => {
     axios
@@ -23,7 +23,6 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${valueInput}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
       .then((response) => {
-        // const res = response.data;
         setDataApi(response.data);
         console.log(response.data);
       })
@@ -33,9 +32,9 @@ function App() {
   return (
     <div className="App">
       <Search setValueInput={setValueInput} valueInput={valueInput} />
-      <Header dataApi={dataApi} />
-      <Temperatures dataApi={dataApi} />
-      <OptionWeather />
+      <Header dataApi={dataApi} setDataApi={setDataApi} />
+      <Temperatures dataApi={dataApi} setDataApi={setDataApi} />
+      <OptionWeather dataApi={dataApi} setDataApi={setDataApi} />
     </div>
   );
 }
