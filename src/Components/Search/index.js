@@ -1,13 +1,30 @@
+import { useState } from "react";
+
 import "./styles.scss";
 
-function Search() {
+function Search({ setCountryValue }) {
+  const [inputData, setInputData] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("New country added");
+    setCountryValue(inputData);
+  }
+
+  function handleChange(event) {
+    setInputData(event.target.value);
+  }
+
   return (
-    <div className="searchBar__container">
+    <form className="searchBar__container" onSubmit={handleSubmit}>
       <input
         className="searchBar__container--title"
+        type="text"
         placeholder="Select Country"
+        onChange={handleChange}
+        value={inputData}
       />
-    </div>
+    </form>
   );
 }
 
