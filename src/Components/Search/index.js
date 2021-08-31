@@ -13,6 +13,7 @@ function Search({ setCountryValue }) {
 
   function handleChange(event) {
     setInputData(event.target.value);
+    console.log(event.target.value);
   }
 
   return (

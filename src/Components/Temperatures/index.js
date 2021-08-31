@@ -1,7 +1,7 @@
 import "./styles.scss";
 import img from "../../Img/weather.png";
 
-function Temperature() {
+function Temperature({}) {
   return (
     <div className="temperature__container">
       <img className="temperature__container--img" src={img} />

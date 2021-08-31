@@ -14,26 +14,27 @@ import "./App.scss";
 function App() {
   // Get element of the API
   const [dataApi, setDataApi] = useState();
-
   // Configure the country
-  const [countryValue, setCountryValue] = useState("Paris");
+  const [valueInput, setValueInput] = useState("London");
 
   useEffect(() => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${countryValue}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${valueInput}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
       .then((response) => {
-        const res = response.data;
+        // const res = response.data;
         setDataApi(response.data);
-      });
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="App">
-      <Search setCountryValue={setCountryValue} countryValue={countryValue} />
-      <Header />
-      <Temperatures />
+      <Search setValueInput={setValueInput} valueInput={valueInput} />
+      <Header dataApi={dataApi} />
+      <Temperatures dataApi={dataApi} />
       <OptionWeather />
     </div>
   );
