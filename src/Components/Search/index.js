@@ -2,13 +2,14 @@ import { useState } from "react";
 
 import "./styles.scss";
 
-function Search({ setCountryValue }) {
+function Search({ setValueInput }) {
   const [inputData, setInputData] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log("New country added");
-    setCountryValue(inputData);
+    setValueInput(inputData);
+    setInputData("");
   }
 
   function handleChange(event) {

@@ -5,7 +5,7 @@ function OptionWeather({ dataApi }) {
     <div className="optionWeather__container">
       <div className="optionWeather__container--pollen">
         <h3 className="optionWeather__container--pollen-title">Ressenti</h3>
-        <h3>{dataApi?.main.feels_like} °</h3>
+        <h3>{Math.round(Math.round(dataApi?.main.feels_like))} °</h3>
       </div>
 
       <div className="optionWeather__container--wind">
