@@ -37,6 +37,9 @@ function App() {
       .finally(() => setLoading(false));
   }, [valueInput]);
 
+  const dates = new Date();
+  dates.getHours();
+
   return (
     <div className="App">
       {/* Faire une 404 */}

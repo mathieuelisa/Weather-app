@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import "./styles.scss";
 
@@ -17,6 +17,13 @@ function Search({ setValueInput }) {
     console.log(event.target.value);
   }
 
+  const inputRef = useRef();
+
+  useEffect(() => {
+    console.log("salut pipo");
+    inputRef.current.focus();
+  }, []);
+
   return (
     <form className="searchBar__container" onSubmit={handleSubmit}>
       <input
@@ -25,6 +32,7 @@ function Search({ setValueInput }) {
         placeholder="Select Country"
         onChange={handleChange}
         value={inputData}
+        ref={inputRef}
       />
     </form>
   );
