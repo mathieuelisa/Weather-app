@@ -41,9 +41,7 @@ function App() {
   }, [valueInput]);
 
   const wallpaperChangement = () =>
-    new Date().getHours() > 17 && new Date().getHours() < 20
-      ? "--isActive"
-      : "";
+    new Date().getHours() > 6 && new Date().getHours() < 19 ? "--isActive" : "";
 
   return (
     <div className={`App${wallpaperChangement()}`}>
