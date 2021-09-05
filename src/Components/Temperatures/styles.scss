@@ -2,19 +2,21 @@
   height: 450px;
 
   &--img {
-    height: 315px;
+    position: relative;
+    height: 200px;
+    top: 26px;
   }
 
   &--degree {
     position: relative;
-    top: -60px;
+    top: 28px;
     font-size: 61px;
   }
 }
 
 .temperature__secondContainer {
   position: relative;
-  top: -39px;
+  top: 54px;
   display: flex;
   justify-content: space-evenly;
 }

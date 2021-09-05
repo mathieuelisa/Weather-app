@@ -28,8 +28,7 @@ function App() {
       )
       .then((response) => {
         setDataApi(response.data);
-
-        console.log(valueInput);
+        // console.log(response.data);
         setValueInput(valueInput);
 
         // weather_city stock la valeur
