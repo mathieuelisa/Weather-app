@@ -8,7 +8,9 @@ import lightning from "../../Img/cloud-lightning.svg";
 import cloud_rain from "../../Img/cloud-rain.svg";
 import cloud_snow from "../../Img/cloud-snow.svg";
 import wind from "../../Img/wind.svg";
-import feather from "../../Img/feather.svg";
+import mist from "../../Img/mist.svg";
+import clouds from "../../Img/clouds.svg";
+import light_rain from "../../Img/light-rain.svg";
 
 import { useState, useEffect } from "react";
 
@@ -27,17 +29,21 @@ function Temperature({ dataApi }) {
     "clear sky": sun,
     "few clouds": cloud,
     "scattered clouds": cloud,
-    "broken clouds": wind,
+    "broken clouds": cloud,
     "shower rain": cloud_drizzle,
     rain: cloud_rain,
     thunderstorm: lightning,
     snow: cloud_snow,
-    mist: feather,
-    "overcast clouds": feather,
+    mist: mist,
+    "overcast clouds": clouds,
+    "moderate rain": cloud_rain,
+    "light rain": light_rain,
   };
   const [imgWeather, setImgWeather] = useState();
 
   const weatherDescription = dataApi?.weather[0].description;
+
+  console.log(weatherDescription);
 
   useEffect(() => {
     setImgWeather(weatherIcons[weatherDescription]);
