@@ -1,5 +1,4 @@
 import "./styles.scss";
-
 // icons temps
 import sun from "../../Img/sun.svg";
 import cloud from "../../Img/cloud.svg";
@@ -11,8 +10,10 @@ import wind from "../../Img/wind.svg";
 import mist from "../../Img/mist.svg";
 import clouds from "../../Img/clouds.svg";
 import light_rain from "../../Img/light-rain.svg";
-
+// Import modules
 import { useState, useEffect } from "react";
+// Import library
+import Fade from "react-reveal/Fade";
 
 function Temperature({ dataApi }) {
   // const [imgWeather, setImgWeather] = useState({
@@ -61,15 +62,19 @@ function Temperature({ dataApi }) {
         {Math.round(dataApi?.main.temp)}°
       </h2>
       <div className="temperature__secondContainer">
-        <div className="temperature__secondContainer--min">
-          <h3>Min</h3>
-          <h3>{Math.round(dataApi?.main.temp_min)}°</h3>
-        </div>
+        <Fade left duration={2000}>
+          <div className="temperature__secondContainer--min">
+            <h3>Min</h3>
+            <h3>{Math.round(dataApi?.main.temp_min)}°</h3>
+          </div>
+        </Fade>
 
-        <div className="temperature__secondContainer--max">
-          <h3>Max</h3>
-          <h3>{Math.round(dataApi?.main.temp_max)}°</h3>
-        </div>
+        <Fade right duration={2000}>
+          <div className="temperature__secondContainer--max">
+            <h3>Max</h3>
+            <h3>{Math.round(dataApi?.main.temp_max)}°</h3>
+          </div>
+        </Fade>
       </div>
     </div>
   );
