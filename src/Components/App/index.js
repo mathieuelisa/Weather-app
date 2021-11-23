@@ -33,7 +33,7 @@ function App() {
 
         // weather_city stock la valeur
         localStorage.setItem("weather_city", valueInput);
-        document.title = response.data.name;
+        document.title = "Weather App | " + response.data.name;
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
