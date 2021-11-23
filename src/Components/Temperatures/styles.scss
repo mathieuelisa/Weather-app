@@ -5,6 +5,15 @@
     position: relative;
     height: 200px;
     top: 26px;
+    left: 206px;
+  }
+
+  &--clouds {
+    position: relative;
+    top: 75px;
+    height: 244px;
+    left: -87px;
+    opacity: 0.5;
   }
 
   &--degree {
@@ -19,4 +28,29 @@
   top: 54px;
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (max-width: 945px) {
+  .temperature__container--img {
+    position: relative;
+    height: 200px;
+    top: 26px;
+    left: 0px;
+  }
+
+  .temperature__container--clouds {
+    position: relative;
+    top: -117px;
+    left: -8px;
+    height: 177px;
+    opacity: 0.5;
+  }
+
+  .temperature__secondContainer {
+    top: -122px;
+  }
+
+  .temperature__container--degree {
+    top: -122px;
+  }
 }

@@ -6,26 +6,17 @@ import cloud_drizzle from "../../Img/cloud-drizzle.svg";
 import lightning from "../../Img/cloud-lightning.svg";
 import cloud_rain from "../../Img/cloud-rain.svg";
 import cloud_snow from "../../Img/cloud-snow.svg";
-import wind from "../../Img/wind.svg";
 import mist from "../../Img/mist.svg";
 import clouds from "../../Img/clouds.svg";
 import light_rain from "../../Img/light-rain.svg";
+import moon from "../../Img/moon.png";
+import nuages from "../../Img/nuages.png";
 // Import modules
 import { useState, useEffect } from "react";
 // Import library
 import Fade from "react-reveal/Fade";
 
 function Temperature({ dataApi }) {
-  // const [imgWeather, setImgWeather] = useState({
-  //   clearSky: sun,
-  //   fewClouds: cloud,
-  //   showerRain: cloud_drizzle,
-  //   rain: cloud_rain,
-  //   snow: cloud_snow,
-  //   thunderstorm: cloud_lightning,
-  // });
-
-  // 4 ème methode
   const weatherIcons = {
     "clear sky": sun,
     "few clouds": cloud,
@@ -40,14 +31,31 @@ function Temperature({ dataApi }) {
     "moderate rain": cloud_rain,
     "light rain": light_rain,
   };
+
+  const weatherIconsByNight = {
+    "clear sky": moon,
+    "few clouds": cloud,
+    "scattered clouds": cloud,
+    "broken clouds": cloud,
+    "shower rain": cloud_drizzle,
+    rain: cloud_rain,
+    thunderstorm: lightning,
+    snow: cloud_snow,
+    mist: mist,
+    "overcast clouds": clouds,
+    "moderate rain": cloud_rain,
+    "light rain": light_rain,
+  };
+
   const [imgWeather, setImgWeather] = useState();
 
   const weatherDescription = dataApi?.weather[0].description;
 
-  console.log(weatherDescription);
-
   useEffect(() => {
-    setImgWeather(weatherIcons[weatherDescription]);
+    let currentTime = new Date().getHours();
+    currentTime < 18
+      ? setImgWeather(weatherIcons[weatherDescription])
+      : setImgWeather(weatherIconsByNight[weatherDescription]);
   }, [weatherDescription]);
 
   return (
@@ -56,6 +64,11 @@ function Temperature({ dataApi }) {
         src={imgWeather}
         className="temperature__container--img"
         alt={weatherDescription}
+      />
+      <img
+        src={nuages}
+        className="temperature__container--clouds"
+        alt="pictures of cloud"
       />
 
       <h2 className="temperature__container--degree">

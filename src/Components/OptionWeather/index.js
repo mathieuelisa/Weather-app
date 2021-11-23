@@ -10,7 +10,7 @@ function OptionWeather({ dataApi }) {
 
       <div className="optionWeather__container--wind">
         <h3 className="optionWeather__container--wind-title">Vent</h3>
-        <h3>{dataApi?.wind.speed} km/h</h3>
+        <h3>{dataApi?.wind.speed * 2} km/h</h3>
       </div>
 
       <div className="optionWeather__container--humidity">
