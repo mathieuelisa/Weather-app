@@ -1,19 +1,10 @@
-@font-face {
-  font-family: "Resotho";
-  src: local("Resotho"), url(../../Font/Resotho.otf) format("truetype");
-}
-
 .header__container {
   height: 50px;
-
-  &--country {
-    font-size: 30px;
-  }
 
   &--date {
     font-family: "Resotho";
     font-size: 17px;
-    color: darkgrey;
+    color: lightgrey;
     padding: 10px;
   }
 }

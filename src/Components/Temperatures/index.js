@@ -68,7 +68,7 @@ function Temperature({ dataApi }) {
       <img
         src={nuages}
         className="temperature__container--clouds"
-        alt="pictures of cloud"
+        alt={weatherDescription}
       />
 
       <h2 className="temperature__container--degree">

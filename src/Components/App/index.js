@@ -8,12 +8,11 @@ import Search from "../Search";
 import Temperatures from "../Temperatures";
 import OptionWeather from "../OptionWeather";
 import Loader from "../Loader";
-
 // Style scss
 import "./App.scss";
 
 function App() {
-  const [dataApi, setDataApi] = useState();
+  const [dataApi, setDataApi] = useState(null);
   const [loading, setLoading] = useState(false);
   const [valueInput, setValueInput] = useState(
     // localstorage me permet de recuperer à l'aide d'une cle "weather_city" la valeur associe si y'en a pas la valeur par defaut sera Paris
@@ -28,7 +27,6 @@ function App() {
       )
       .then((response) => {
         setDataApi(response.data);
-        // console.log(response.data);
         setValueInput(valueInput);
 
         // weather_city stock la valeur

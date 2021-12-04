@@ -3,6 +3,11 @@
   src: local("Azonix"), url(../../Font/Azonix.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "Resotho";
+  src: local("Resotho"), url(../../Font/Resotho.otf) format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;

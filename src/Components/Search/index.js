@@ -7,20 +7,17 @@ function Search({ setValueInput }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("New country added");
     setValueInput(inputData);
     setInputData("");
   }
 
   function handleChange(event) {
     setInputData(event.target.value);
-    console.log(event.target.value);
   }
 
   const inputRef = useRef();
 
   useEffect(() => {
-    console.log("salut pipo");
     inputRef.current.focus();
   }, []);
 

@@ -3,17 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.5;
+  opacity: 0.7;
 
   &--title {
-    font-family: "Resotho";
-    letter-spacing: 2px;
+    font-family: "Azonix";
     background: transparent;
     border: none;
     padding-bottom: 5px;
     border-bottom: 1px solid lightgray;
-    outline: none;
-    color: lightgray;
+    color: white;
     text-align: center;
   }
 }
